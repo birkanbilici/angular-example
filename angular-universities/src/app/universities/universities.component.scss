@@ -2,7 +2,7 @@
     margin: 0 0 2em 0;
     list-style-type: none;
     padding: 0;
-    width: 15em;
+    width: 400px;
 
     li {
       display: flex;
@@ -13,17 +13,17 @@
       cursor: pointer;
       position: relative;
       left: 0;
-      background-color: #EEE;
+      background-color: rgb(202, 135, 135);
       margin: .5em;
       padding: 0;
-      border-radius: 6px;
+      border-radius: 30px;
       display: flex;
       align-items: stretch;
       height: 2.8em;
     }
 
     button:hover {
-      color: #2c3a41;
+      color: #0c151a;
       background-color: #e6e6e6;
       left: .1em;
     }
@@ -53,10 +53,10 @@
       font-size: small;
       color: white;
       padding: 0.8em 0.7em 0 0.7em;
-      background-color: #405061;
+      background-color: #73a8e0;
       line-height: 1em;
       margin-right: .8em;
-      border-radius: 4px 0 0 4px;
+      border-radius: 50%;
     }
     
     .name {
