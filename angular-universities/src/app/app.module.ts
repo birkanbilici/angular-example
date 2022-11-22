@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UniversitiesComponent } from './universities/universities.component';
 import { FormsModule } from '@angular/forms';
-import { UniversityDetailComponent } from './university-detail/university-detail.component'; // <-- NgModel lives here
+import { UniversityDetailComponent } from './university-detail/university-detail.component';
+import { LogsComponent } from './logs/logs.component'; // <-- NgModel lives here
 @NgModule({
   declarations: [
     AppComponent,
     UniversitiesComponent,
-    UniversityDetailComponent
+    UniversityDetailComponent,
+    LogsComponent
   ],
   imports: [
     BrowserModule,
