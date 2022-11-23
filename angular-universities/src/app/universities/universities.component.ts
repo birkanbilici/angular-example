@@ -9,22 +9,16 @@ import { LogsService } from '../logs.service';
 })
 export class UniversitiesComponent implements OnInit {
 
-  selectedUviversity?: University;
   universities: University[] = []
 
   constructor(private universityService: UniversityService, private logsService: LogsService) { }
-
+  ngOnInit(): void {
+    this.getUniversities()
+  }
+  
   getUniversities(): void {
     this.universityService.getUniversities()
     .subscribe( universities => this.universities = universities )
   }
-  ngOnInit(): void {
-    this.getUniversities()
-  }
-
-  onHandleSelect(university: University): void {
-    this.selectedUviversity = university;
-    this.logsService.add(`Universities Component: Selected University ID id: ${university.id}`)
-  }
-
+  
 }

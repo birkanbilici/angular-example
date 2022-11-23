@@ -1,0 +1,7 @@
+<h2>Top Universities</h2>
+<div class="universities-menu">
+  <a *ngFor="let university of universities"
+    routerLink="/detail/{{university.id}}">
+    {{university.name}}
+  </a>
+</div>

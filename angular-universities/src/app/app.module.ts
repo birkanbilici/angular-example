@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { UniversitiesComponent } from './universities/universities.component';
 import { FormsModule } from '@angular/forms';
 import { UniversityDetailComponent } from './university-detail/university-detail.component';
-import { LogsComponent } from './logs/logs.component'; // <-- NgModel lives here
+import { LogsComponent } from './logs/logs.component';
+import { TopUniversitiesComponent } from './top-universities/top-universities.component'; // <-- NgModel lives here
 @NgModule({
   declarations: [
     AppComponent,
     UniversitiesComponent,
     UniversityDetailComponent,
-    LogsComponent
+    LogsComponent,
+    TopUniversitiesComponent
   ],
   imports: [
     BrowserModule,

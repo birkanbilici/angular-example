@@ -2,11 +2,9 @@
 <h2>Universities</h2>
 <ul class="universities">
     <li *ngFor="let university of universities">
-        <button type="button" (click)='onHandleSelect(university)' [class.selected]='university === selectedUviversity'>
-            <span class="badge">{{university.id}}</span>
-            <span class="name">{{university.name}}</span>
-        </button>
+        <a routerLink="/detail/{{university.id}}">
+            <span class="badge">{{university.id}}</span> {{university.name}}
+        </a>
     </li>
 </ul>
 
-<app-university-detail [university]="selectedUviversity"></app-university-detail>

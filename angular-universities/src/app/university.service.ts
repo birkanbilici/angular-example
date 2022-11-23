@@ -15,5 +15,11 @@ export class UniversityService {
     return universities
   }
 
+  getUniversity(id: number): Observable<University> {
+    const university = UNIVERSITIES.find(univ => univ.id === id)!;
+    this.logsService.add(`Universiy Service: fetched University id=${id}`);
+    return of(university);
+  }
+
   constructor(private logsService: LogsService) { }
 }
