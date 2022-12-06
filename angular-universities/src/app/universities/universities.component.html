@@ -1,10 +1,22 @@
 
 <h2>Universities</h2>
+<div>
+    <label for="new-university">university name: </label>
+    <input id="new-university" #universityName />
+  
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button type="button" class="add-button" (click)="add(universityName.value); universityName.value=''">
+      Add university
+    </button>
+  </div>
 <ul class="universities">
     <li *ngFor="let university of universities">
         <a routerLink="/detail/{{university.id}}">
             <span class="badge">{{university.id}}</span> {{university.name}}
         </a>
+        <button type="button" class="delete" title="delete university"
+            (click)="delete(university)">x</button>
     </li>
+    
 </ul>
 

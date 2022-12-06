@@ -32,4 +32,11 @@ export class UniversityDetailComponent implements OnInit {
     this.location.back();
   }
 
+  save(): void {
+    if (this.university) {
+      this.universityService.updateUniversity(this.university)
+        .subscribe(() => this.goBack());
+    }
+  }
+
 }
