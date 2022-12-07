@@ -1,22 +1,22 @@
-
-<h2>Universities</h2>
-<div>
-    <label for="new-university">university name: </label>
-    <input id="new-university" #universityName />
-  
-    <!-- (click) passes input value to add() and then clears the input -->
-    <button type="button" class="add-button" (click)="add(universityName.value); universityName.value=''">
-      Add university
-    </button>
+<div class="ml-10 bg-gray-200 p-5 w-1/2">
+  <h2 class="text-neutral-500 mb-3">Universities</h2>
+  <div class="text-neutral-600">
+      <label for="new-university">University name: </label>
+      <input class="border-2 border-stone-300 px-3 rounded-lg" id="new-university" #universityName />
+      <button type="button" class="bg-indigo-200 hover:bg-indigo-500 border-solid border rounded-lg border-sky-500 hover:border-dotted hover:text-neutral-800 px-1 mt-2 mb-3 ml-3" (click)="add(universityName.value); universityName.value=''">
+        Add University
+      </button>
   </div>
-<ul class="universities">
-    <li *ngFor="let university of universities">
-        <a routerLink="/detail/{{university.id}}">
-            <span class="badge">{{university.id}}</span> {{university.name}}
-        </a>
-        <button type="button" class="delete" title="delete university"
-            (click)="delete(university)">x</button>
-    </li>
-    
-</ul>
-
+  <ul class="text-neutral-600 bg-gray-100 p-5 h-96 overflow-auto " #scrollContainerUni [scrollTop]="scrollContainerUni.scrollHeight">
+      <div class="border-solid border-2 border-sky-200 rounded-lg bg-gray-300 mb-2 w-full relative" *ngFor="let university of universities">
+        <li class="hover:bg-cyan-200 h-full cursor-pointer" >
+            <a routerLink="/detail/{{university.id}}">
+                <span class="border-solid border-2 rounded-l-lg border-sky-200 p-1 mr-2 bg-gray-400 ">{{university.id}}</span> {{university.name}}
+            </a>
+            <button type="button" class="pl-1 pr-1 absolute right-0 top-0 border-solid border rounded-r-lg border-sky-200 bg-gray-400" title="delete university"
+                (click)="delete(university)">x</button>
+        </li>
+      </div>
+      
+  </ul>
+</div>

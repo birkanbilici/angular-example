@@ -1,7 +1,11 @@
-<h2>Top Universities</h2>
-<div class="universities-menu">
-  <a *ngFor="let university of universities"
-    routerLink="/detail/{{university.id}}">
-    {{university.name}}
-  </a>
+<div class="flex-col ml-6">
+  <h2 class="mt-6 text-neutral-500">Top Universities</h2>
+  <div class="universities-menu">
+    <a class="mr-2 hover:bg-cyan-200" *ngFor="let university of universities"
+      routerLink="/detail/{{university.id}}">
+      {{university.name}}
+    </a>
+  </div>
+
+  <app-university-search></app-university-search>
 </div>

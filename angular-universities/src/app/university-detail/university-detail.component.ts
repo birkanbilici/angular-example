@@ -10,13 +10,13 @@ import { UniversityService } from '../university.service';
 })
 
 export class UniversityDetailComponent implements OnInit {
-  @Input() university?:University;
-
   constructor(
     private route: ActivatedRoute,
     private universityService: UniversityService,
     private location: Location
   ) { }
+
+  @Input() university?:University;
 
   ngOnInit(): void {
     this.getUniversity();

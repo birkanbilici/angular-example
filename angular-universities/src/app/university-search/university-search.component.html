@@ -1,0 +1,12 @@
+<div class="mt-4" id="search-component">
+    <label class="mr-4" for="search-box">University Search</label>
+    <input class="border-2 border-stone-300 px-3 rounded-lg" #searchBox id="search-box" (input)="search(searchBox.value)" />
+  
+    <ol class="list-decimal ml-6">
+      <li class="ml-2 text-slate-500 hover:text-sky-400" *ngFor="let university of universities$ | async" >
+        <a class="ml-2 text-slate-500 hover:text-sky-400" routerLink="/detail/{{university.id}}">
+          {{university.name}}
+        </a>
+      </li>
+    </ol>
+  </div>

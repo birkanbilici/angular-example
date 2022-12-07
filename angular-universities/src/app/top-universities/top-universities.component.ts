@@ -8,9 +8,9 @@ import { UniversityService } from '../university.service';
   styleUrls: ['./top-universities.component.scss']
 })
 export class TopUniversitiesComponent implements OnInit {
-  universities: University[] = [];
-
   constructor(private universityService: UniversityService) { }
+
+  universities: University[] = [];
 
   ngOnInit(): void {
     this.getUniversities()

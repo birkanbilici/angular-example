@@ -1,7 +1,16 @@
-<h1>{{title}}</h1>
-<nav>
-    <a routerLink="/universities">Universities</a>
-    <a routerLink="/top-universities">Top Universities</a>
-</nav>
-<router-outlet></router-outlet>
-<app-logs></app-logs>
+
+<div class="bg-gray-300 h-screen relative">
+    <div class="flex flex-col justify-around mx-auto text-gray-600">
+        <h1 class="bg-gray-400 mx-auto p-2 w-full text-center text-slate-50 ">{{title}}</h1>
+        <nav class="flex h-10 p-2">
+            <a class="flex-auto text-center align-middle hover:bg-cyan-200 h-full" routerLink="/top-universities">Top Universities</a>
+            <a class="flex-auto text-center align-middle hover:bg-cyan-200 h-full" routerLink="/universities">Universities</a>
+        </nav>
+    </div>
+
+
+    <router-outlet></router-outlet>
+    <div class="pl-6 pt-10">
+        <app-logs ></app-logs>
+    </div>
+</div>

@@ -11,13 +11,15 @@ import { TopUniversitiesComponent } from './top-universities/top-universities.co
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
+import { UniversitySearchComponent } from './university-search/university-search.component';
 @NgModule({
   declarations: [
     AppComponent,
     UniversitiesComponent,
     UniversityDetailComponent,
     LogsComponent,
-    TopUniversitiesComponent
+    TopUniversitiesComponent,
+    UniversitySearchComponent
   ],
   imports: [
     BrowserModule,

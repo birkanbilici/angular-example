@@ -8,10 +8,10 @@ import { LogsService } from '../logs.service';
   styleUrls: ['./universities.component.scss']
 })
 export class UniversitiesComponent implements OnInit {
+  constructor(private universityService: UniversityService, private logsService: LogsService) { }
 
   universities: University[] = []
 
-  constructor(private universityService: UniversityService, private logsService: LogsService) { }
   ngOnInit(): void {
     this.getUniversities()
   }

@@ -10,7 +10,8 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 
 export class UniversityService {
-
+  constructor(private logsService: LogsService,  private http: HttpClient,) { }
+  
   private universitiesUrl = 'api/universities';  // URL to web api
   
   httpOptions = {
@@ -61,7 +62,20 @@ export class UniversityService {
             );
   }
 
-  constructor(private logsService: LogsService,  private http: HttpClient,) { }
+  searchUniversities(term: string): Observable<University[]> {
+    if (!term.trim()) {
+      return of([]);
+    }
+    return this.http.get<University[]>(`${this.universitiesUrl}/?name=${term}`)
+            .pipe(
+              tap(x => x.length ?
+                this.log(`found universities matching "${term}"`) :
+                this.log(`no universities matching "${term}"`)),
+              catchError(this.handleError<University[]>('searchUniversities', []))
+            );
+  }
+
+  
 
   private handleError<T>(operation = 'operation', result?: T) {
     const errorHandler = (error: any): Observable<T> => {
