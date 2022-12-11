@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { University } from './university';
-import { UNIVERSITIES } from './mock-universities';
+import { University } from '../model/university';
+import { UNIVERSITIES } from '../mock-universities';
 import { Observable, of } from 'rxjs';
 import { LogsService } from './logs.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';

@@ -10,7 +10,7 @@ import { LogsComponent } from './logs/logs.component';
 import { TopUniversitiesComponent } from './top-universities/top-universities.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data.service';
+import { InMemoryDataService } from './services/in-memory-data.service';
 import { UniversitySearchComponent } from './university-search/university-search.component';
 @NgModule({
   declarations: [
@@ -27,7 +27,7 @@ import { UniversitySearchComponent } from './university-search/university-search
     FormsModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
+      InMemoryDataService, { dataEncapsulation: false, passThruUnknownUrl: true }
     )
   ],
   providers: [],

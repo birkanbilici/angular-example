@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { University } from '../university'
+import { University } from '../model/university'
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { UniversityService } from '../university.service';
+import { UniversityService } from '../services/university.service';
 @Component({
   selector: 'app-university-detail',
   templateUrl: './university-detail.component.html',

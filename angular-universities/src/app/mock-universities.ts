@@ -1,4 +1,4 @@
-import { University } from './university'
+import { University } from './model/university'
 
 export const UNIVERSITIES: University[] = [
     { id: 2, name: 'Marywood University'},
