@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { University } from '../university'
-import { UniversityService } from '../university.service';
-import { LogsService } from '../logs.service';
+import { University } from '../model/university'
+import { UniversityService } from '../services/university.service';
+import { LogsService } from '../services/logs.service';
+import { HipoLabUniversitiesRequest, HipoLabUniversityDetail } from '../model/university';
+
 @Component({
   selector: 'app-universities',
   templateUrl: './universities.component.html',
@@ -11,11 +13,11 @@ export class UniversitiesComponent implements OnInit {
   constructor(private universityService: UniversityService, private logsService: LogsService) { }
 
   universities: University[] = []
-
+  
   ngOnInit(): void {
     this.getUniversities()
   }
-  
+
   getUniversities(): void {
     this.universityService.getUniversities()
     .subscribe( universities => this.universities = universities )

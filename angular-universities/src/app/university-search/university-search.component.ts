@@ -3,8 +3,8 @@ import { Observable, Subject } from 'rxjs';
 import {
    debounceTime, distinctUntilChanged, switchMap
  } from 'rxjs/operators';
-import { University } from '../university';
-import { UniversityService } from '../university.service';
+import { University } from '../model/university';
+import { UniversityService } from '../services/university.service';
 
 @Component({
   selector: 'app-university-search',
@@ -23,7 +23,6 @@ export class UniversitySearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('test')
     this.universities$ = this.searchTerms.pipe(
       debounceTime(300),
       distinctUntilChanged(),

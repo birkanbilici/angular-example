@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { University } from './university';
+import { University } from '../model/university';
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class InMemoryDataService implements InMemoryDbService {
+
   createDb() {
-    const universities = [
+    const universities:Array<University> = [
       { id: 2, name: 'Marywood University'},
       { id: 3, name: 'Lindenwood University'},
       { id: 4, name: 'Sullivan University'},
@@ -17,6 +19,7 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 8, name: 'Columbia College (SC)'},
       { id: 9, name: 'Chabot-Las Positas Community College District'},
     ];
+
     return {universities};
   }
 

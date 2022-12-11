@@ -1,0 +1,35 @@
+<div class="ml-10">
+    <div class="mb-5">
+        <label for="country">Country: </label>
+        <input class="border-2 border-stone-300 px-3 rounded-lg" id="country" #countryName [(ngModel)]="country" placeholder="country name" (input)="searchCountry(countryName.value)" />
+    </div>
+    <div class="mb-5">
+        <label for="search">Search name: </label>
+        <input class="border-2 border-stone-300 px-3 rounded-lg" id="search" #searchTerm placeholder="search name" (input)="searchName(searchTerm.value)" />
+    </div>
+    <div class="m-2 p-2 border-solid border-2 border-stone-500 px-3 rounded-lg" *ngIf="(universities$ | async) as universities">
+        <div class="mb-5 bg-cyan-200 opacity-50">Total Result: {{universities.length}}</div>
+        <div class="h-[500px] overflow-auto">
+            <ol class="list-decimal ml-10 text-slate-700"  *ngIf="universities.length > 0; else loading ">
+                <div *ngFor="let uni of universities">
+                    <li>{{uni.name}}</li>
+                </div>
+            </ol>
+        </div>
+    </div>
+    <!--below div is only loaded at initial load-->
+    <div class="m-2 p-2 border-solid border-2 border-stone-500 px-3 rounded-lg" *ngIf="uniList.length > 0 && (!(universities$ | async)?.length) && !isSearchUsed">
+        <div class="mb-5 bg-cyan-200 opacity-50">Total Result: {{uniList.length}}</div>
+        <div class="h-[500px] overflow-auto">
+            <ol class="list-decimal ml-10 text-slate-700" >
+                <div *ngFor="let item of uniList">
+                    <li>{{item.name}}</li>
+                </div>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<ng-template #loading>
+    <p>no result ...</p>
+</ng-template>
