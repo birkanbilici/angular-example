@@ -14,16 +14,10 @@ export class UniversitiesComponent implements OnInit {
 
   universities: University[] = []
   
-
-  
-
   ngOnInit(): void {
     this.getUniversities()
-    console.log('ngOnInit')
   }
 
-  
-  
   getUniversities(): void {
     this.universityService.getUniversities()
     .subscribe( universities => this.universities = universities )

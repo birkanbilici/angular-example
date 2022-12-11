@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
 import { UniversitySearchComponent } from './university-search/university-search.component';
+import { OtherUniversitiesComponent } from './other-universities/other-universities.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { UniversitySearchComponent } from './university-search/university-search
     UniversityDetailComponent,
     LogsComponent,
     TopUniversitiesComponent,
-    UniversitySearchComponent
+    UniversitySearchComponent,
+    OtherUniversitiesComponent
   ],
   imports: [
     BrowserModule,
